@@ -1,18 +1,14 @@
 <template>
     <button :class="[
-    'sky_button--' + type
-    ]">
+    'sky-button',
+    'sky-button-' + size,
+    'sky-button-'+type+'-' + color,
+    ]"
+    >
+    <slot></slot>
     </button>
 </template>
 
-<script>
-export default {
-    name: 'sky-button',
-    props: {
-        type: {
-            type: String,
-            default: 'default',
-        }
-    }
-}
-</script>
+<script lang="ts" src="./button.ts"></script>
+
+<style lang="scss" scoped src="./button.scss"></style>

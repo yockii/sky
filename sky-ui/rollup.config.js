@@ -1,11 +1,10 @@
 import esbuild from 'rollup-plugin-esbuild'
 import vue from 'rollup-plugin-vue'
-import stylus from 'rollup-plugin-stylus'
 import dartSass from 'sass'
 import {terser} from 'rollup-plugin-terser'
 
 export default {
-    input: 'src/lib/index.ts',
+    input: 'packages/index.ts',
     output: {
         globals: {
             vue: 'Vue'
@@ -16,8 +15,8 @@ export default {
         plugins: [terser()]
     },
     plugins: [
-        stylus({
-            include: /\.styl$/,
+        scss({
+            include: /\.scss$/,
             sass: dartSass
         }),
         esbuild({
