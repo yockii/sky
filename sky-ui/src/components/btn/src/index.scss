@@ -1,0 +1,125 @@
+.s-btn{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    outline: 0;
+    border: 0;
+    vertical-align: middle;
+    font-size: $btn-font-size;
+    line-height: $btn-line-height;
+    text-decoration: none;
+    color: inherit;
+    background: transparent;
+    font-weight: $btn-font-weight;
+    text-transform: uppercase;
+    text-align: center;
+    width: auto;
+    height: auto;
+    cursor: default;
+    padding: $btn-padding;
+    min-height: 2.572em;
+
+    .s-icon, .s-spinner {
+        font-size: $btn-line-height;
+    }
+
+    &.disabled{
+        opacity: .7 !important;
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: inherit;
+        box-shadow: $btn-shadow;
+    }
+
+    &--actionable {
+        cursor: pointer;
+
+        &.s-btn--standard {
+            &:before{
+                transition: box-shadow $btn-transition;
+            }
+
+            &:active, &.s-btn--active{
+                &:before{
+                    box-shadow: $btn-shadow-active;
+                }
+            }
+        }
+    }
+
+    &--no-uppercase {
+        text-transform: none;
+    }
+
+    &--rectangle {
+        border-radius: $btn-border-radius;
+    }
+
+    &--outline {
+        background: transparent !important;
+
+        &:before{
+            border: 1px solid currentColor;
+        }
+    }
+
+    &--push {
+        border-radius: $btn-push-border-radius;
+
+        &:before{
+            border-bottom: 3px solid rgba(0,0,0,.15)
+        }
+
+        &.s-btn--actionable{
+            transition: transform $btn-transition;
+
+            &:before{
+                transition: border-width $btn-transition;
+            }
+
+            &:active, &.q-btn--active {
+                transform: translateY(2px);
+
+                &:before{
+                    border-bottom-width: 0;
+                }
+            }
+        }
+    }
+
+    &--rounded{
+        border-radius: $btn-rounded-border-radius;
+    }
+
+    &--round{
+        border-radius: 50%;
+        padding: 0;
+        min-width: 3em;
+        min-height: 3em;
+    }
+
+    &--outline, &--unelevated {
+        &:before{
+            box-shadow: none;
+        }
+    }
+
+    &__content {
+        transition: opacity .3s;
+        z-index: 0;
+
+        &--hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+}

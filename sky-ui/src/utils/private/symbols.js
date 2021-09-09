@@ -1,0 +1,8 @@
+export const skyuiKey = '_s_'
+export const timelineKey = '_s_t_'
+export const stepperKey = '_s_s_'
+export const layoutKey = '_s_l_'
+export const pageContainerKey = '_s_pc_'
+export const formKey = '_s_fo_'
+export const tabsKey = '_s_tabs_'
+export const uploaderKey = '_s_u_'

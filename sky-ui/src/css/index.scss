@@ -1,0 +1,16 @@
+@import './variables.scss';
+@import './normalize.scss';
+
+
+// 组件
+@import '../components/btn/src/index.scss';
+
+
+// 指令
+@import '../directives/Ripple.scss';
+
+// 核心部件
+@import './core/flex.scss';
+@import './core/positioning.scss';
+@import './core/size.scss';
+@import './core/visibility.scss';

@@ -1,1 +1,0 @@
-export {default as SkyButton} from './button/index'
